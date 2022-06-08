@@ -1,6 +1,6 @@
 # Pokemon Battle
 
-This watch face will display the date, time, bluetooth connection status, and battery percentage over a pokemon battle.
+This watch face will display the date, time, battery level, and temperature over a pokemon battle.
 
 ![Watch Face](screenshot.png)
 
@@ -13,8 +13,8 @@ Download this app to your watch and follow Settings -> System -> Select Clock ->
 Tried and true overview including:
 - Date
 - Time
-- Bluetooth connection status
-- Battery Percentage
+- Battery Level
+- Temperature
 
 ## Requests
 
@@ -26,4 +26,4 @@ Spencer Churchill
 
 ## Attributions
 
-All icons used in this app are from [icons8](icons8.com).
+All icons used in this app are from [icons8](icons8.com). All artwork is from [Pokemon](pokemon.com).
