@@ -1,25 +1,29 @@
-# App Name
+# Pokemon Battle
 
-Describe the app...
+This watch face will display the date, time, bluetooth connection status, and battery percentage over a pokemon battle.
 
-Add screen shots (if possible) to the app folder and link then into this file with ![](<name>.png)
+![Watch Face](screenshot.png)
 
 ## Usage
 
-Describe how to use it
+Download this app to your watch and follow Settings -> System -> Select Clock -> PkMn Btl. The watch face should now be set to Pokemon Battle.
 
 ## Features
 
-Name the function
-
-## Controls
-
-Name the buttons and what they are used for
+Tried and true overview including:
+- Date
+- Time
+- Bluetooth connection status
+- Battery Percentage
 
 ## Requests
 
-Name who should be contacted for support/update requests
+For requests or bug reports please [submit an issue](https://github.com/splch/pokebtl/issues/new) on the GitHub page.
 
 ## Creator
 
-Your name
+Spencer Churchill
+
+## Attributions
+
+All icons used in this app are from [icons8](icons8.com).
