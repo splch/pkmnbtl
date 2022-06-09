@@ -11,14 +11,26 @@ Graphics.prototype.setFontPKMN = function (scale) {
   return this;
 };
 
+var bg = {
+  width: 176, height: 176, bpp: 1,
+  transparent: -1,
+  buffer: require("heatshrink").decompress(atob("2GwgP/AH4A/AH4A/AH4AM/gVU+grrv4rUn6Am+4VU84VV58P8EAAAgVM5UP4AVS4ULwAVFT5YVBFY4VM5V7K6aZrCr0/CqkPCpXjBJEHCpXwSwqwO/AVUAH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/ACf+v4VT/QVUFdkfTP4AE84VhyEf4EAAAcBCptfwAVEgAVMwEfCqeQv5BFCpqDrCuHfCqm/Cql/Cqf+K6n9Cqn7Cqn3YvfwCqngBJHHCpWAgAAHg6/KChEAj5tUAH4AD94IH773LTZGPCpXzRo8DgiZJAAMBVw8DaBd9Do0C/QqK32wII80CpUN5o1HxZBK2fTBI+HCpXL14JHl4VUt4V/Cv4VwgHA+FvyEP/F+p4VLn9/+/v9+e//5v2PCpcfCoPfCoX4v/vCpcPCqkHgf37lgjxBB6/fCpgrF/fX7YVONof/5/LNpqZC7wIB6/TTJgIGIJrxsCv4V/CrODwFAt/f//4h/6/oVL9/37/nj///P3/V9Cp3qz4VDzoVN4HtCoJBS94rC7/6+oVS536+IVL84VF996/KZMK4KZCNoOCK5UvYpfTBI+XCpfPBI+LCpXz0EAAAsDkgIGAAcJgIfHgYrKwAVH/wVM3BBHuhBKju2Co+uCpVtQZC/BQZQLKAH4A/AH4A/ACQA="))
+};
+
 // Redraw the screen
 function draw() {
   // for catching any error
   try {
     g.reset().clearRect(Bangle.appRect);
 
+    // Draw battle scene background
+    g.drawImage(bg, 0, 0);
+
     // Use Pokemon font
     g.setFontPKMN(1);
+
+    // Set font color to black
+    g.setColor(0x0000);
 
     // Get and format date
     var date = new Date();
@@ -45,12 +57,12 @@ function draw() {
 
     // Draw date
     var height = g.getFontHeight();
-    g.drawString(time, 0, 0 * height);
-    g.drawString(spaceStr, 0, 1 * height);
-    g.drawString(dateStr, 0, 2 * height);
-    g.drawString(batteryStr, 0, 3 * height);
-    g.drawString(memoryStr, 0, 4 * height);
-    g.drawString(temperatureStr, 0, 5 * height);
+    g.drawString(time, 0, 3 * height); // Widgets are 8*3=24px tall
+    g.drawString(spaceStr, 0, 4 * height);
+    g.drawString(dateStr, 0, 5 * height);
+    g.drawString(batteryStr, 0, 6 * height);
+    g.drawString(memoryStr, 0, 7 * height);
+    g.drawString(temperatureStr, 0, 8 * height);
 
     // Log potential bug roots
     console.log({
