@@ -29,9 +29,12 @@ function draw() {
   var time = require("locale").time(date, 1); // Opponent's name
   var dateStr = dayStr + " " + dayNum + " " + month; // Player's name
 
+  // Get and format storage space
+  var spaceStr = require('Storage').getFree() / process.env.STORAGE; // Opponent's HP
+
   // Get and format battery level
   var battery = E.getBattery(); // 0-100
-  var batteryStr = battery + "/100"; // Remaining HP
+  var batteryStr = battery + "/100"; // Player's HP
 
   // Get and format RAM usage
   var memory = process.memory();
@@ -44,10 +47,11 @@ function draw() {
   // Draw date
   var height = g.getFontHeight();
   g.drawString(time, 0, 0 * height);
-  g.drawString(dateStr, 0, 1 * height);
-  g.drawString(batteryStr, 0, 2 * height);
-  g.drawString(memoryStr, 0, 3 * height);
-  g.drawString(temperatureStr, 0, 4 * height);
+  g.drawString(spaceStr, 0, 1 * height)
+  g.drawString(dateStr, 0, 2 * height);
+  g.drawString(batteryStr, 0, 3 * height);
+  g.drawString(memoryStr, 0, 4 * height);
+  g.drawString(temperatureStr, 0, 5 * height);
 }
 
 // First draw...

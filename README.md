@@ -1,29 +1,32 @@
 # Pokemon Battle
 
-This watch face will display the date, time, battery level, RAM usage and temperature seamlessly within a pokemon battle.
+This watch face seamlessly displays the time, date, battery level, temperature, storage, and RAM usage within a pokemon battle.
 
 ![Watch Face](screenshot.png)
 
 ## Usage
 
-Download this app to your watch and follow Settings -> System -> Select Clock -> PkMn Btl. The watch face should now be set to Pokemon Battle.
+Download this app to your watch and follow Settings -> System -> Select Clock -> PkMn Btl. The watch face should now be set to the Pokemon Battle.
 
 ## Features
 
-Tried and true overview including:
+A tried and true format including:
+
 - Time
 - Date
 - Battery Level
-- RAM usage
 - Temperature
+- Storage available
+- RAM usage
 
 ### Important
 
 1. The opponent pokemon's name is the **current time**
+2. The opponent pokemon's HP is the **available storage**
 2. The player pokemon's name is the **date**
 3. The player pokemon's HP is the **battery life**
 4. The player pokemon's EXP is the **RAM usage**
-5. The information box is the **temperature**
+5. The information box shows the **temperature**
 
 ## Requests
 
