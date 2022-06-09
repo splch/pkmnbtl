@@ -30,19 +30,24 @@ function draw() {
   var dateStr = dayStr + " " + dayNum + " " + month; // Player's name
 
   // Get and format battery level
-  var batteryLevel = E.getBattery(); // 0-100
-  var batteryStr = batteryLevel + "/100"; // Remaining HP
+  var battery = E.getBattery(); // 0-100
+  var batteryStr = battery + "/100"; // Remaining HP
+
+  // Get and format RAM usage
+  var memory = process.memory();
+  var memoryStr = memory.usage / memory.total; // Experience points
 
   // Get and format temperature
-  var temp = E.getTemperature(); // Degrees celsius
-  var tempStr = require("locale").temp(temp); // Info box
+  var temperature = E.getTemperature(); // Degrees (celsius)
+  var temperatureStr = require("locale").temp(temperature); // Info box
 
   // Draw date
   var height = g.getFontHeight();
   g.drawString(time, 0, 0 * height);
   g.drawString(dateStr, 0, 1 * height);
   g.drawString(batteryStr, 0, 2 * height);
-  g.drawString(tempStr, 0, 3 * height);
+  g.drawString(memoryStr, 0, 3 * height);
+  g.drawString(temperatureStr, 0, 4 * height);
 }
 
 // First draw...
