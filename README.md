@@ -14,7 +14,7 @@ A tried and true format including:
 
 - Time
 - Date
-- Battery Level
+- Battery level
 - Temperature
 - Storage available
 - RAM usage
