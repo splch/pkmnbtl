@@ -12,9 +12,8 @@ Graphics.prototype.setFontPKMN = function (scale) {
 };
 
 var bg = {
-  width: 176, height: 176, bpp: 1,
-  transparent: -1,
-  buffer: require("heatshrink").decompress(atob("2GwgP/AH4A/AH4A/AH4AM/gVU+grrv4rUn6Am+4VU84VV58P8EAAAgVM5UP4AVS4ULwAVFT5YVBFY4VM5V7K6aZrCr0/CqkPCpXjBJEHCpXwSwqwO/AVUAH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/ACf+v4VT/QVUFdkfTP4AE84VhyEf4EAAAcBCptfwAVEgAVMwEfCqeQv5BFCpqDrCuHfCqm/Cql/Cqf+K6n9Cqn7Cqn3YvfwCqngBJHHCpWAgAAHg6/KChEAj5tUAH4AD94IH773LTZGPCpXzRo8DgiZJAAMBVw8DaBd9Do0C/QqK32wII80CpUN5o1HxZBK2fTBI+HCpXL14JHl4VUt4V/Cv4VwgHA+FvyEP/F+p4VLn9/+/v9+e//5v2PCpcfCoPfCoX4v/vCpcPCqkHgf37lgjxBB6/fCpgrF/fX7YVONof/5/LNpqZC7wIB6/TTJgIGIJrxsCv4V/CrODwFAt/f//4h/6/oVL9/37/nj///P3/V9Cp3qz4VDzoVN4HtCoJBS94rC7/6+oVS536+IVL84VF996/KZMK4KZCNoOCK5UvYpfTBI+XCpfPBI+LCpXz0EAAAsDkgIGAAcJgIfHgYrKwAVH/wVM3BBHuhBKju2Co+uCpVtQZC/BQZQLKAH4A/AH4A/ACQA="))
+  width: 176, height: 176, bpp: 4,
+  buffer: require("heatshrink").decompress(atob("/4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4AJ+EAh5C/K7EAAAwocDzxXUmcDgczmEDK/5XUmEwHANEABhX/K4ZYBV4JX/V60AgY4dK+YAlK+AA/K/5X/AH5X/K7sAFEommK5SwlP84vJGEonnWBQAoWNoA/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AGsAAAwkeK+MzgcDmcwgZXfh5XzmEwHAN3ACt/ag5XxLAKvBK8KwvV4kAgaPdK+YAmK94Al+BX/AAZCSK/5DEV/6upK/6uXK/6uXK/6uXK/6uXK/7FZK/5X/K/4A/K+8ABxv4xAAUgAABK9ovBK/5WWK5wn+FxIAnV1gA/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AH4A/AEEAAEIkkABkP//wPcYkkGBsP+CviEkYxOh4lkK10AKwIyBa0QkkABXwK4UPK8YkjGBpX/K/5X/K6/wE4UAAAMP+ADBBAYSBCoQPDEZAKDgAlDK9xOCFQnwAQg2DCgQjLCohXyAYJXHA4ZXQV4YiGK9qwBe4RXFMgQLCV5ytEV/42DK6IQCJwpXrf4pLDLQZXQAALMDJwxXqJAg5Cf4JBCAYJXSEoYmDK9h9maYpX/GDRX/K/5X/K/5X/K/5X/K/5X/K/5XTgAABAgPwBAgSBBAgAKDgYmCFQYCBK9oyGKIYFCHBxTHPQRX3BocPVxxXID4hXtdQZOBAIJXES4QAMDgZXED4avwKoI+FIwIFEV5jIEVwZXzHQaRBCIYFCK5rKDDAhX3eYQHFK5oYEFQZXvAFJX/K/5X/K/5XK+EAAEAmBEkQxOAQIAiEkgAL+CJkEwKuuGQSLBEn4ATh//A="))
 };
 
 // Redraw the screen
@@ -27,7 +26,7 @@ function draw() {
     g.drawImage(bg, 0, 0);
 
     // Use Pokemon font
-    g.setFontPKMN(1);
+    g.setFontPKMN(2);
 
     // Set font color to black
     g.setColor(0x0000);
@@ -38,7 +37,7 @@ function draw() {
     var dayNum = date.getDate();
     var month = require("locale").month(date, 1).toUpperCase();
     var time = require("locale").time(date, 1); // Opponent's name
-    var dateStr = dayStr + " " + dayNum + " " + month; // Player's name
+    var dateStr = dayNum + " " + month; // Player's name
 
     // Get and format storage space
     var spaceStr = require('Storage').getFree() / process.env.STORAGE; // Opponent's HP
@@ -57,12 +56,12 @@ function draw() {
 
     // Draw date
     var height = g.getFontHeight();
-    g.drawString(time, 0, 3 * height); // Widgets are 8*3=24px tall
-    g.drawString(spaceStr, 0, 4 * height);
-    g.drawString(dateStr, 0, 5 * height);
-    g.drawString(batteryStr, 0, 6 * height);
-    g.drawString(memoryStr, 0, 7 * height);
-    g.drawString(temperatureStr, 0, 8 * height);
+    g.drawString(time, 25, 24); // Widgets are 8*3=24px tall
+    // g.drawString(spaceStr, 0, 50);
+    g.drawString(dateStr, 100, 79);
+    g.drawString(batteryStr, 88, 101);
+    // g.drawString(memoryStr, 0, 60);
+    g.drawString(temperatureStr, 10, 148);
 
     // Log potential bug roots
     console.log({
